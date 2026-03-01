@@ -1,62 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Real-Time Personalized Physiologically Based Stress Detection for Hazardous Operations</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Stress Detection</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<div id="canvas-container"></div>
+
 <body>
+<header class="navbar">
+        <div class="logo">STRESS<span>DETECTION</span></div>
+        <nav class="nav-links">
+            <a href="#how-it-works">What we do</a>
+            <a href="#about">About</a>
+            <a href="#challenges">Challenges</a>
+            <a href="#objectives">Objectives</a>
+            <a href="#parameters">Parameters</a>
+            <a href="#applications">Applications</a>
+        </nav>
+        <div class="nav-icons">
+            <span>Contact Us</span>
+        </div>
+    </header>
 
-<canvas id="bg"></canvas>
+    <section class="hero">
+        <video autoplay muted loop playsinline class="video-bg" id="heroVideo">
+            <source src="videos/background.mp4.mp4" type="video/mp4">
+        </video>
+        
+        <div class="video-overlay"></div>
 
-<nav class="navbar">
-  <div class="logo">AI Stress Detection</div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">How It Works</a>
-    <a href="#login">Login</a>
-  </div>
-</nav>
+        <div class="hero-content">
+            <h1 class="main-title">
+                " REAL TIME PERSONALIZED PHYSIOLOGICALLY <br> 
+                BASED STRESS DETECTION FOR <br> 
+                HAZARDOUS OPERATIONS "
+            </h1>
+        </div>
 
-<section class="hero">
-  <h1>Real-Time personalized physiologically based stress detection for hazardous operations</h1>
-  <p>Prevent human errors in hazardous environments using real-time AI stress analysis.</p>
-  <a href="#login"><button class="cta">Enter Dashboard</button></a>
+        <div class="video-controls">
+            <button class="pause-btn" onclick="toggleVideo()">||</button>
+        </div>
+
+        <a href="#" class="learn-more-btn">Learn more</a>
+    </section>
+    <section class="enhanced-intro">
+    <div class="data-wrapper">
+        <div class="main-group">
+            <h2 class="data-headline">
+                Why Stress Matters in 
+                <span class="tech-highlight">Hazardous</span> Work
+            </h2>
+            <p class="data-body-primary">
+                 In hazardous environments, stress directly impacts operational safety. Physiological signals provide objective, measurable indicators of stress levels unlike subjective assessments.
+            </p>
+        </div>
+
+        <div class="details-group">
+            <h3 class="data-label">Critical Concerns:</h3>
+            <div class="data-body-secondary">
+                <p>Poor decision-making under pressure.</p>
+                <p>Slowed reaction times to emergencies.</p>
+                <p>Increased safety incident probability.</p>
+                <p>Difficulty recovering from mental fatigue.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="challenges" class="challenges-section">
+    <div class="section-header">
+        <h2 class="section-label">01 // The Challenge</h2>
+        <h3 class="section-main-title">Bridging the Safety Gap in Hazardous Environments</h3>
+    </div>
+
+    <div class="challenges-grid">
+        <div class="challenge-card">
+            <div class="card-icon">⚡</div>
+            <h4>Continuous Exposure</h4>
+            <p>Workers face persistent physiological and psychological stress from high-stakes environments and demanding schedules. This constant "red-line" state leads to burnout and critical errors.</p>
+        </div>
+
+        <div class="challenge-card">
+            <div class="card-icon">⚠️</div>
+            <h4>Inadequate Current Solutions</h4>
+            <p>Manual stress assessment methods cannot provide real-time monitoring in operational settings, creating dangerous safety gaps. You cannot manage what you do not measure in real-time.</p>
+        </div>
+
+        <div class="challenge-card">
+            <div class="card-icon">🔄</div>
+            <h4>One-Size-Fits-All Models</h4>
+            <p>Generalized systems fail to account for individual physiological variability, resulting in inaccurate classifications. A "normal" heart rate for one worker might be a "stress" signal for another.</p>
+        </div>
+    </div>
+
+    <div class="solution-banner">
+        <div class="solution-content">
+            <span class="solution-tag">The Innovation</span>
+            <h2>Our Personalized Approach</h2>
+            <p>A personalized, evidence-based stress detection system that adapts to each worker's unique physiological profile. By baseline-mapping individual data, we eliminate the noise of generalized models.</p>
+        </div>
+    </div>
+    <section id="objectives" class="objectives-section">
+    <div class="section-header">
+        <h2 class="section-label">02 // Strategic Objectives</h2>
+        <h3 class="section-main-title">A Multi-Phased Approach to Hazard Prevention</h3>
+    </div>
+
+    <div class="objectives-container">
+        <div class="primary-goal-card">
+            <span class="goal-tag">Primary Mission</span>
+            <h1>Develop a web-based personalized stress detection system for real-time hazard prevention.</h1>
+            <p>Our mission is to move beyond reactive safety measures and provide a proactive shield for workers in high-risk environments.</p>
+        </div>
+
+        <div class="objectives-steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h4>Precision Data Collection</h4>
+                    <p>Capturing the "Human Signal" through high-fidelity sensors. We monitor Heart Rate (HR), Heart Rate Variability (HRV), Electrodermal Activity (EDA), and Respiration Rate to build a 360-degree physiological snapshot.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h4>Dynamic Pattern Analysis</h4>
+                    <p>Stress isn't static. We characterize physiological responses across varying operational workloads—from physical exertion to high-stakes cognitive decision-making—to understand the baseline of "normal" performance.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h4>AI-Driven Classification</h4>
+                    <p>Utilizing advanced machine learning algorithms to filter noise and categorize stress into actionable levels: <strong>Low</strong> (Optimal), <strong>Medium</strong> (Alert), and <strong>High</strong> (Critical Intervention Required).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h4>Immediate Operational Awareness</h4>
+                    <p>Creating intuitive, low-latency dashboard visualizations. This ensures that safety officers and individuals receive immediate, color-coded feedback to prevent accidents before they happen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="how-it-works" class="how-it-works-section">
+    <div class="section-header">
+        <h2 class="section-label">03 // The Methodology</h2>
+        <h3 class="section-main-title">The End-to-End Intelligence Pipeline</h3>
+    </div>
+
+    <div class="pipeline-container">
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">01</span>
+                <div class="step-line"></div>
+            </div>
+            <div class="step-details">
+                <h4 class="tech-highlight">Multi-Modal Data Collection</h4>
+                <p>We gather real-time physiological and contextual data—including heart rate, skin conductance, temperature, and motion signals—using clinical-grade wearable sensors. This raw biometric stream forms the foundation of our intelligent system.</p>
+            </div>
+        </div>
+
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">02</span>
+                <div class="step-line"></div>
+            </div>
+            <div class="step-details">
+                <h4>Signal Processing & Feature Engineering</h4>
+                <p>Raw data is cleaned and transformed into meaningful features. We apply advanced noise removal, normalization, and signal extraction techniques to ensure high data quality and peak model performance.</p>
+            </div>
+        </div>
+
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">03</span>
+                <div class="step-line"></div>
+            </div>
+            <div class="step-details">
+                <h4>Personalized Model Training</h4>
+                <p>Advanced Machine Learning algorithms are trained on historical and personalized datasets. The model learns unique individual patterns associated with stress levels to build high-precision predictive capabilities.</p>
+            </div>
+        </div>
+
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">04</span>
+                <div class="step-line"></div>
+            </div>
+            <div class="step-details">
+                <h4>Rigorous Validation & Evaluation</h4>
+                <p>The model is stressed-tested against validation datasets to measure accuracy, precision, and recall. Only models that meet our strict reliability thresholds move toward operational deployment.</p>
+            </div>
+        </div>
+
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">05</span>
+                <div class="step-line"></div>
+            </div>
+            <div class="step-details">
+                <h4 class="tech-highlight">Real-Time System Deployment</h4>
+                <p>Validated models are integrated into the live environment. The system begins analyzing incoming real-time biometric streams and generating stress predictions with millisecond latency.</p>
+            </div>
+        </div>
+
+        <div class="pipeline-step">
+            <div class="step-meta">
+                <span class="step-index">06</span>
+            </div>
+            <div class="step-details">
+                <h4>Continuous Monitoring & Maintenance</h4>
+                <p>The system tracks performance for drift or anomalies. Regular updates and retraining cycles ensure the system remains personalized and effective as the user's physiological profile evolves over time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="applications" class="applications-section">
+    <div class="section-header">
+        <h2 class="section-label">04 // Operational Domains</h2>
+        <h3 class="section-main-title">Versatile Protection for High-Stakes Environments</h3>
+        <p class="section-intro-text">
+            This system is engineered for environments where human stress is a critical variable. 
+            By monitoring physiological signals, we turn invisible pressure into actionable safety data.
+        </p>
+    </div>
+    
+     <section id="applications" class="applications-section">
+    <div class="section-header">
+        <h2 class="section-label">04 // Operational Domains</h2>
+        <h3 class="section-main-title">Versatile Protection</h3>
+    </div>
+
+    <div class="apps-inventory-grid">
+        <div class="app-card-horizontal">
+            <div class="app-image-wrapper">
+                <img src="Images/Mining Industry.jpg" alt="Mining" class="app-img">
+            </div>
+            <div class="app-info">
+                <span class="app-tag">Hazardous Environment</span>
+                <h4>Extreme Mining</h4>
+                <p>Real-time monitoring enhances decision-making in deep-earth environments where every second counts for safety.</p>
+            </div>
+        </div>
+<div class="app-card-horizontal">
+    <div class="app-image-wrapper">
+        <img src="Images/Construction site.jpg" alt="Construction Site" class="app-img">
+    </div>
+    <div class="app-info">
+        <span class="app-tag">High-Risk Infrastructure</span>
+        <h4>Construction</h4>
+        <p>Detecting heat exhaustion and physical over-exertion in real-time. We prevent falls and machinery accidents by monitoring the worker's internal stability.</p>
+    </div>
+</div>
+        <div class="app-card-horizontal">
+            <div class="app-image-wrapper">
+                <img src="Images/industrial control rooms.jpg" alt="Control Centers" class="app-img">
+            </div>
+            <div class="app-info">
+                <span class="app-tag">High Vigilance</span>
+                <h4>Industrial Control</h4>
+                <p>Identifying cognitive fatigue and acute stress before a small lapse translates into systems failure.</p>
+            </div>
+        </div>
+
+        <div class="app-card-horizontal">
+            <div class="app-image-wrapper">
+                <img src="Images/defense and security sectors.png" alt="Defense" class="app-img">
+            </div>
+            <div class="app-info">
+                <span class="app-tag">Tactical Security</span>
+                <h4>Defense & Tactical</h4>
+                <p>Stress detection helps commanders maintain team focus and maximize operational efficiency in the field.</p>
+            </div>
+        </div>
+
+        <div class="app-card-horizontal">
+            <div class="app-image-wrapper">
+                <img src="Images/healthcare emergency staff.jpg" alt="Healthcare" class="app-img">
+            </div>
+            <div class="app-info">
+                <span class="app-tag">Critical Care</span>
+                <h4>Emergency Health</h4>
+                <p>Actively reduces clinician burnout and prevents critical medical errors during high-trauma shifts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<section id="parameters" class="parameters-section">
+    <div class="section-header">
+        <h2 class="section-label">05 // Biometric Indicators</h2>
+        <h3 class="section-main-title">Key Physiological Parameters</h3>
+        <p class="section-intro-text">
+            Our system monitors four core physiological signals to triangulate stress levels with high precision.
+        </p>
+    </div>
+
+    <div class="table-container">
+        <table class="parameters-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>What It Measures</th>
+                    <th>Normal Resting Range</th>
+                    <th>Stress Indicator Range</th>
+                    <th>Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="param-name">❤️ Heart Rate (HR)</td>
+                    <td>Beats per minute (BPM)</td>
+                    <td>60 – 100 BPM</td>
+                    <td class="stress-val">100+ BPM at rest</td>
+                    <td>Elevated heart rate without physical activity indicates autonomic stress activation.</td>
+                </tr>
+                <tr>
+                    <td class="param-name">💓 Heart Rate Variability (HRV)</td>
+                    <td>Variation between beats (ms)</td>
+                    <td>30 – 70 ms</td>
+                    <td class="stress-val">Below 20–30 ms</td>
+                    <td>Low HRV suggests the body is in "fight-or-flight" mode with reduced recovery capacity.</td>
+                </tr>
+                <tr>
+                    <td class="param-name">💧 Electrodermal Activity (EDA)</td>
+                    <td>Skin conductance (µS)</td>
+                    <td>1 – 10 µS</td>
+                    <td class="stress-val">Sudden spikes</td>
+                    <td>Responds rapidly to emotional or cognitive load through sweat gland activation.</td>
+                </tr>
+                <tr>
+                    <td class="param-name">🌬️ Respiration Rate</td>
+                    <td>Breaths per minute</td>
+                    <td>12 – 20 breaths/min</td>
+                    <td class="stress-val">20+ breaths/min</td>
+                    <td>Rapid, shallow breathing reduces oxygen efficiency and signals acute stress levels.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section id="outcomes" class="outcomes-section">
+    <div class="section-header">
+        <h2 class="section-label">06 // Operational Impact</h2>
+        <h3 class="section-main-title">Safe Operations Start with Knowing Your Team's Stress</h3>
+    </div>
+
+    <div class="outcomes-grid">
+        <div class="outcome-card">
+            <div class="outcome-icon">🎯</div>
+            <h4>Personalized Detection</h4>
+            <p>Real-time stress level detection with personalized baseline comparison. Our AI accounts for individual physiological "fingerprints" to eliminate false positives.</p>
+        </div>
+
+        <div class="outcome-card">
+            <div class="outcome-icon">🚦</div>
+            <h4>Three-Tier Insights</h4>
+            <p>A three-tier classification system providing actionable insights: Low, Medium, and High stress alerts. This allows for clear, tiered response protocols.</p>
+        </div>
+
+        <div class="outcome-card">
+            <div class="outcome-icon">📊</div>
+            <h4>Intuitive Dashboards</h4>
+            <p>Custom-built intuitive dashboards for safety managers and health teams. Turn complex biometric streams into easy-to-read "Health Status" visuals.</p>
+        </div>
+
+        <div class="outcome-card">
+            <div class="outcome-icon">🛡️</div>
+            <h4>Incident Prevention</h4>
+            <p>Drastically improved incident prevention in hazardous work settings. Identify fatigue and acute stress *before* they lead to operational errors.</p>
+        </div>
+    </div>
+
+    <div class="awareness-callout">
+        <div class="callout-content">
+            <h4 class="tech-highlight">Beyond Compliance: A Culture of Care</h4>
+            <p>By implementing this system, organizations transition from reactive "accident reporting" to a proactive "wellness-first" operational model. When workers know their safety is being monitored with precision, focus and morale improve across the board.</p>
+        </div>
+    </div>
+</section>
+<section id="about" class="about-section">
+    <div class="section-header">
+        <h2 class="section-label">07 // Technical Core</h2>
+        <h3 class="section-main-title">The Engineering Behind the Intelligence</h3>
+    </div>
+
+    <div class="about-grid">
+        <div class="tech-narrative">
+            <p class="narrative-lead">
+                Our system redefines the standard for safety by addressing the core limitation of modern biometrics: <span class="tech-highlight">Generalization.</span>
+            </p>
+            <p class="narrative-body">
+                By implementing a <strong>Personalized Time-Series Machine Learning Framework</strong>, we move beyond "one-size-fits-all" models. Physiological signals—including Heart Rate, Blood Pressure, EDA, and Respiration—are continuously streamed through a sophisticated <strong>Sliding Window Feature Extraction</strong> pipeline.
+            </p>
+            <p class="narrative-body">
+                This process derives critical statistical parameters—such as mean, slope, and standard deviation—to capture the subtle temporal trends that precede a stress-related incident. 
+            </p>
+        </div>
+
+        <div class="architecture-card">
+            <h4 class="card-title">System Architecture</h4>
+            <ul class="spec-list">
+                <li>
+                    <strong>Classifier:</strong> User-specific Random Forest
+                </li>
+                <li>
+                    <strong>Logic:</strong> Adaptive Historical Pattern Recognition
+                </li>
+                <li>
+                    <strong>Frontend:</strong> Flask-based Real-time Dashboard
+                </li>
+                <li>
+                    <strong>Output:</strong> 3-Tier Discrete Stress Classification
+                </li>
+            </ul>
+            <div class="performance-tag">
+                High Accuracy | Ultra-Low Latency | Personalized
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="features" class="features">
-  <div class="feature">Real-Time Monitoring</div>
-  <div class="feature">AI-Based Analysis</div>
-  <div class="feature">No Wearable Sensors</div>
-  <div class="feature">Personalized Stress Models</div>
-</section>
-
-<section id="how" class="steps">
-  <h2>How It Works</h2>
-  <ol>
-    <li>User provides physiological & behavioral data</li>
-    <li>AI model learns baseline patterns</li>
-    <li>System detects stress in real time</li>
-    <li>Alerts prevent errors in risky tasks</li>
-  </ol>
-</section>
-
-<section id="login" class="login-section">
-  <div class="login-box">
-    <h2>Login to Dashboard</h2>
-    <input placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button>Login</button>
-  </div>
-</section>
-
-<footer>
-  © 2026 AI Stress Monitoring System | Machine Learning Powered
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Stress Detection Systems. Designed for Hazardous Operations.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#hero">Back to Top ↑</a>
+        </div>
+    </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-<script src="script.js"></script>
+</section>
+    <script>
+        function toggleVideo() {
+            const video = document.getElementById('heroVideo');
+            if (video.paused) video.play(); else video.pause();
+        }
+    </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>
